@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this is homepage.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .this-heading {
+            color: red;
+            background-color: pink;
+            font-size: 20px;
+            font-weight: 100;
+            font-style: italic;
+            text-align: center;
+
+            /* Color is property and red is value */
+        }
+
+        #rajan {
+            background-color: black;
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        .heading {
+            background-color: royalblue;
+        }
+
+        #box {
+            background-color: red;
+            height: 300px;
+            width: 300px;
+            margin: 0;
+            /*to move a box*/
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #parent {
+            height: 300px;
+            width: 300px;
+            background-color: salmon;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #child {
+            height: 200px;
+            width: 200px;
+            background-color: royalblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* If we want a child div changes according to the height and width of the parent, we can use % in child. like : in parent we use pixels and in child we use percentage. */
+
+        #child button {
+            background-color: cyan;
+            margin: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border: 1px solid blue;
+            border-radius: 20px;
+            color: plum;
+            cursor: pointer;
+        }
+
+        #child button:hover {
+            background-color: salmon;
+            color: white;
+            transition: all ease 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is heading in homepage.</h1>
+    <div>
+        <h1 class="this-heading">this is h1</h1>
+        <h2 class="this-heading">This is h2</h2>
+        <h3 class="this-heading">this is h3</h3>
+    </div>
+
+
+
+
+    <div id="rajan">
+        <p>this is a paragraph with id rajan.</p>
+    </div>
+
+
+    <p>This is paragraph without id</p>
+
+
+    <h1 class="heading">This is heading 1.</h1>
+    <h2 class="heading">This is heading 2.</h2>
+    <h3 class="heading">This is heading 3.</h3>
+    <h4 class="heading">This is heading 4.</h4>
+
+
+    <div id="box">hello</div>
+
+
+    <div id="parent">
+        <div id="child">
+            <button>Click karo Guys</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

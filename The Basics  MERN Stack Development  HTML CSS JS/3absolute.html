@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #box1{
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid magenta;
+
+            /*bottom right*/
+            /* position: absolute;
+            right: 0;
+            bottom: 0; */
+
+
+            /*bottom left*/
+            /* position: absolute;
+            left: 0;
+            bottom: 0; */
+
+            /*making box exact in center*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+        #box2{
+            height: 200px;
+            width: 250px;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid white;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+        }
+        /* absolute and relative */
+    </style>
+</head>
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+</body>
+</html>
