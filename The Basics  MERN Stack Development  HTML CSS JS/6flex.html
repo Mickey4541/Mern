@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'gilroy';
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            background-color: #111;
+        }
+        #parent{
+            height: 100%;
+            width: 100%;
+            background-color: royalblue;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .child{
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+        #child1 img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        #child3 img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        #child2 {
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            background-image: url(./himalaya-4039495.jpg);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode:normal
+
+            /* background-size: cover; */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child1" class="child"><img src="./himalaya-4039495.jpg" alt=""></div>
+        <div id="child2" class="child"></div>
+        <div id="child3" class="child"><img src="./himalaya-4039495.jpg" alt=""></div>
+    </div>
+</body>
+</html>
