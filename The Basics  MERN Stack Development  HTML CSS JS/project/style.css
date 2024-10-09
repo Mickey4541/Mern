@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: kanit;
 }
 html , body{
-    height: 100%;
+    height: auto;
     width: 100%;
     background-color: black;
 }
@@ -21,6 +21,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: red; */
 }
 nav h2{
     font-size: 40px;
@@ -38,16 +39,101 @@ nav a{
 }
 section{
     padding: 60px 80px;
+
 }
 section .hero-text1{
-    background-color: cyan;
+    /* background-color: cyan; */
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: 30px;
 }
 .hero-text1 h1{
-    font-size: 140px;
+    font-size: 150px;
+    text-transform: uppercase;
+    font-family: kanit;
+    font-weight: 700;
+    line-height: 100px;
+}
+.hero-text1 .video{
+    height: 130px;
+    width: 500px;
+    /* background-color: black; */
+    border-radius: 50px;
+    /* margin-top: 30px; */
+    margin-right: 30px;
+    background-image: url(https://images.unsplash.com/photo-1709884732294-90379fee354c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D);
+    background-size: cover;
+    background-position: center;
+}
+.video .play{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 150px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play i{
+    color: white;
+    font-size: 50px;
+}
+section .hero-text2{
+    /* background-color: cyan; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.hero-text2 h1{
+    font-size: 150px;
     text-transform: uppercase;
     font-family: kanit;
     font-weight: 600;
+    line-height: 200px;
+    /* background-color: white; */
+}
+.hero-text2 p{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: kanit;
+    width: 590px;
+    font-weight: 200;
+    /* background-color: rebeccapurple; */
+    padding: 10px;
+}
+section .image{
+    height: 500px;
+    width: 100%;
+    background-color: red;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 50px;
+    background-image: url(../everest-base-camp-4477525.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.arrow{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    top: 78%;
+    
+}
+.image .arrow i{
+    font-size: 50px;
+    color: white;
 }
