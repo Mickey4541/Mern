@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Removing or updating a specific object in an array of data based on a unique ID.
+
+
+const users = [
+    { id: 1, name: "Alice", age: 28},
+    { id: 2, name: "Alisha", age: 21},
+    { id: 3, name: "Alina", age: 22},
+    { id: 5, name: "Ali", age: 23},
+    { id: 6, name: "santos", age: 25},
+];
+
+const allusers = users.filter(function(user){
+    return user.id !== 2;
+})
+console.log(allusers);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js logics</title>
+</head>
+<body style="background-color: black;">
+    <h1>Hello</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //foreach:::::::::::::::::::::::::::::::::::::::::::
+        //array with names::
+        //const names = ["Alice", "Bob", "Rajan", "Sushil", "Harsh"]
+        //foreach always takes function
+        // names.forEach(function (value) {
+        //     //console.log(value);
+        //     if(value === 'Rajan'){
+        //         //empty
+        //     }else{
+        //         console.log(value);
+                
+        //     }
+            
+        // })
+
+
+
+
+
+        //map:::::::::::::used to make one more new array from the existing array. If there are 5 members in array, new array also must have 5 members.:::::::::::::::::::::
+        //const names = ["Alice", "Bob", "Rajan", "Sushil", "Harsh"]
+        //map always takes function.
+        //let newArr = names.map(function(value){
+            //return 1;
+            //console.log(newArr); //output: 1,1,1,1,1
+            //return value + "ji"; // ['Aliceji', 'Bobji', 'Rajanji', 'Sushilji', 'Harshji']
+
+            
+        // })
+
+
+
+    //Filter::::::::::::::::::::::::::::::::::::
+    // const names = ["Alice", "Bob", "Rajan", "Sushil", "Harsh", "Akash"]
+    //filter makes blank array first.and always takes a function.
+    // let newArr = names.filter(function(value){
+        //return true //['Alice', 'Bob', 'Rajan', 'Sushil', 'Harsh']
+        //return false // []
+        //if(value === 'Alice'){
+          //  return true; //['Alice']
+        //}
+
+        // if(value.startsWith("A")){
+        //     return true // ['Alice', 'Akash']
+        // }
+    // })
+
+
+
+
+    //DESTRUCTURING::::::::::::::::::::::::::::::::::::::::::::::::
+    // const user = {
+    //     id: "12345",
+    //     name: "Rajan Bhandari",
+    //     email: "rajan.bhandari@example.com",
+    //     username: "rajan_bhandari",
+    //     isActive: true,
+    //     address: {
+    //         street: "123 Main St",
+    //         city: "Kathmandu",
+    //         state: "Bagmati",
+    //         country: "Nepal",
+    //         postalCode: "44600"
+    //     },
+    //     isActive: true,
+    //     preferences: {
+    //         theme: "dark",
+    //         language: "en",
+    //         roles: ["web", "Developer"]
+    //     },
+    // };
+
+    // let { postalCode } = user.address
+    // console.log(postalCode);
+
+    // // Destructure first and second elements from roles array
+    // let [first, second1] = user.preferences.roles;
+    // console.log(first, second1);  // Output: web Developer
+
+
+    // let [_, second] = user.preferences.roles;
+    // console.log( second);  // Output:  Developer
+
+
+
+
+
+    //Spread Operator:::::::::::::::::::;
+    //it means ...
+    const names = ["Alice", "Bob", "Rajan", "Sushil", "Harsh", "Akash"]
+
+
+    //Here, we copy the names into variable copyNames but actually it is not copy, it is called passing the references of names in copyNames. Like: if i pop one element from copynames, the element also popped out from the names also. Ex:
+
+    //const copyNames = names;
+    //copyNames.pop()
+    //console.log(copyNames);//['Alice', 'Bob', 'Rajan', 'Sushil', 'Harsh']
+    //console.log(names);//['Alice', 'Bob', 'Rajan', 'Sushil', 'Harsh']
+    //:::See, the element is popped from both names and copyNames.So, to avoid it , we can use rest and spread operator. look below:
+
+
+    //const copyNames1 = [...names]; //this is spread operator. 
+    //copyNames1.pop()
+    //console.log(copyNames1);// ['Alice', 'Bob', 'Rajan', 'Sushil', 'Harsh']
+    //console.log(names);// ['Alice', 'Bob', 'Rajan', 'Sushil', 'Harsh', 'Akash']
+
+
+    //now we will see how we can use spread operator in objects.
+        const Objects = {
+            name: "Rajan",
+            age: 30,
+            city: "New York"
+        };
+        //basically, we use [] for Array and {} for objects.
+        const newObj = {...Objects}
+    
+    
+    
+
+    //REST OPERATOR:::::::::::::::::::::::;
+        function abcd(a,b,c,...rest){
+            console.log(a,b,c,rest);//1 2 3 (4) [4, 5, 6, 7]
+        }
+        abcd(1,2,3,4,5,6,7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
