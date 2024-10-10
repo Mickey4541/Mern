@@ -70,3 +70,43 @@ React.createElement("span", { className: "raj" }, "RajanBhandari");
 > Vite: server on demand or serve on demand.
 
 
+# UseState Hook:::
+Hooks are special typeof functions. see examples inside src/assets folder images.
+
+
+# Integration of Tailwindcss in React.
+- tailwindcss.com
+- inside docs.
+- inside Framework Guide, select vite.
+- using react selected
+- if you already make project, follow from step 2:
+  > npm install -D tailwindcss postcss autoprefixer
+  > npx tailwindcss init -p
+
+- Inside tailwind.config.js:
+ <!-- /** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} -->
+
+
+
+- inside ./src/index.css:
+<!-- @tailwind base;
+@tailwind components;
+@tailwind utilities; -->
+
+
+- npm run dev
+- Testing.
+
+
+
+# 
