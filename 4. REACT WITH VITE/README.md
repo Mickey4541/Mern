@@ -109,4 +109,9 @@ export default {
 
 
 
-# 
+# Components:::::::::::::::::::;;;;;
+
+> Important: We made a component folder inside src folder. Keep in mind that whenever we are making a component, always start with a capital letter like: making a navbar as: (Navbar not navbar)
+
+# Props and Props Drilling:
+

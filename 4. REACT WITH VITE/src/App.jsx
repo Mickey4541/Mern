@@ -84,36 +84,179 @@
 
 
 
-// //form handeling:::::::::::::::
-import React, { useState } from 'react'
+
+// // //form handeling:::::::::::::::
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [username, setusername] = useState("")
+
+
+// // yaha e receive garekoo
+//   const submitHandler = (e)=>{
+//     e.preventDefault()
+//     console.log("Form Submitted");
+
+//     // jaba aauta username submit garevani tyo field feri empty hunxa
+//     setusername("");
+    
+//   }
+//   return (
+//     <div>
+//               {/* yaha bata e pass gareko */}
+//       <form className= 'flex justify-center items-center flex-col' onSubmit= {(e)=>{submitHandler(e)}} action=""> 
+
+//         {/* yaha hamile mathi usestate maa username variable banako ani yaha input maa value maa username pass gareko. tespaxi input field maa kehi type gardaa input field change vairako hunxa ni ta tyo onchange maa (e.target.value ) means j type gareko xa tesailai username set gar vaneko. yaha hamile jaba input field maa kehi lekhi rako xam, hamile react lai vanirako xam ki setusername. username set gardey e.target.value lai set gardey username maa. yeso garda hamile lekhi rako pani xam ra react lai pani taha xa ki yaha hamile k lekhirako xam vanera. in fact hamile yo react ko through nai lekhirako xam. this is called two way binding. */}
+//         <input value = {username} onChange={(e)=>{setusername(e.target.value)}} className='px-4 py-3 text-xl m-5 rounded  text-black' type="text" name="" id="" placeholder='Enter Your name' />
+
+//         <button className='px-4 py-3 bg-yellow-300 m-4 text-xl rounded'type="submit">Submit</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+
+
+// Components::::::::::::::::::::::::::::::::
+
+{/* <></>  =>  They are called fragments */}
+
+// import React from 'react'
+// import Header from './components/Header'
+// import Footer from './components/Footer'
+// import Card from './components/Card'
+
+// const App = () => {
+//   return (
+//     <>
+//       <Header/>
+//       <div className='flex flex-wrap justify-center'>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         <Card/>
+//         </div>
+
+//         <Footer/>
+      
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+//Props and props drilling::::::::::::::::::::
+//means we can pass data on components:::::::
+
+// import React from 'react'
+// import PropsCard from './components/PropsCard'
+
+// const App = () => {
+//   const user = "Rajan"
+//   return (
+//     <>
+//       <PropsCard user = "Ramesh"/>
+//       <PropsCard user = {user}/>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+//PAssing data through props:::::::::::::::::::::::::::::
+// import React from 'react'
+// import CardThird from './components/CardThird'
+
+// const App = () => {
+//   return (
+//     <>
+//       <div className='p-10'>
+//        <CardThird user = "Rajan" lastname = "Bhandari" age ='25' city = "Dang"/>
+//       </div>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+//
+import React from 'react'
+import CardFour from './components/CardFour'
 
 const App = () => {
-  const [username, setusername] = useState("")
 
+  const users = [
+    {
+      "username": "Rajan",
+      "lastname": "Bhandari",
+      "age": 23,
+      "city": "Dang",
+      "profession": "Web Developer",
+      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "username": "Sachin",
+      "lastname": "Chaudhari",
+      "age": 24,
+      "city": "Kathmandu",
+      "profession": "Software Engineer",
+      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "username": "Alohin",
+      "lastname": "Oli",
+      "age": 22,
+      "city": "Pokhara",
+      "profession": "Data Analyst",
+      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "username": "Bipana",
+      "lastname": "Chaudhari",
+      "age": 25,
+      "city": "Butwal",
+      "profession": "Graphic Designer",
+      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "username": "Rajan",
+      "lastname": "Khadka",
+      "age": 26,
+      "city": "Biratnagar",
+      "profession": "Cybersecurity Specialist",
+      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+    }
+  ]
+  
 
-// yaha e receive garekoo
-  const submitHandler = (e)=>{
-    e.preventDefault()
-    console.log("Form Submitted");
-
-    // jaba aauta username submit garevani tyo field feri empty hunxa
-    setusername("");
-    
-  }
   return (
-    <div>
-              {/* yaha bata e pass gareko */}
-      <form className= 'flex justify-center items-center flex-col' onSubmit= {(e)=>{submitHandler(e)}} action=""> 
-
-        {/* yaha hamile mathi usestate maa username variable banako ani yaha input maa value maa username pass gareko. tespaxi input field maa kehi type gardaa input field change vairako hunxa ni ta tyo onchange maa (e.target.value ) means j type gareko xa tesailai username set gar vaneko. yaha hamile jaba input field maa kehi lekhi rako xam, hamile react lai vanirako xam ki setusername. username set gardey e.target.value lai set gardey username maa. yeso garda hamile lekhi rako pani xam ra react lai pani taha xa ki yaha hamile k lekhirako xam vanera. in fact hamile yo react ko through nai lekhirako xam. this is called two way binding. */}
-        <input value = {username} onChange={(e)=>{setusername(e.target.value)}} className='px-4 py-3 text-xl m-5 rounded  text-black' type="text" name="" id="" placeholder='Enter Your name' />
-
-        <button className='px-4 py-3 bg-yellow-300 m-4 text-xl rounded'type="submit">Submit</button>
-      </form>
-    </div>
+    <>
+      <div className='p-5 flex items-center justify-center'>
+        {users.map(function(elem, index){
+          return <CardFour key={index}username={elem.username} lastname={elem.lastname} age={elem.age} city={elem.city} Profession = {elem.profession} photo={elem.profile_photo} />
+        })}
+      </div>
+    </>
   )
 }
 
 export default App
-
-
