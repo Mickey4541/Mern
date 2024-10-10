@@ -71,7 +71,7 @@ React.createElement("span", { className: "raj" }, "RajanBhandari");
 
 
 # UseState Hook:::
-Hooks are special typeof functions. see examples inside src/assets folder images.
+Hooks are special typeof functions. see examples inside src/assets/React drill Screenshots folder. React maa variable vaneko usestate ho.
 
 
 # Integration of Tailwindcss in React.
