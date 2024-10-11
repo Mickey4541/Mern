@@ -114,4 +114,9 @@ export default {
 > Important: We made a component folder inside src folder. Keep in mind that whenever we are making a component, always start with a capital letter like: making a navbar as: (Navbar not navbar)
 
 # Props and Props Drilling:
-
+# Axios::::::
+- Showing data in frontend coming from APIS.
+- APIS are like waiter.
+- Lorem Picsum is fake api. we can use it.
+- npm i axios
+- 

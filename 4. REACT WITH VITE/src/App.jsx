@@ -198,64 +198,119 @@
 
 
 
-//
-import React from 'react'
-import CardFour from './components/CardFour'
+// //fetching user data through JSON and showing it on cards.
+// import React from 'react'
+// import CardFour from './components/CardFour'
+
+// const App = () => {
+
+//   const users = [
+//     {
+//       "username": "Rajan",
+//       "lastname": "Bhandari",
+//       "age": 23,
+//       "city": "Dang",
+//       "profession": "Web Developer",
+//       "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//     },
+//     {
+//       "username": "Sachin",
+//       "lastname": "Chaudhari",
+//       "age": 24,
+//       "city": "Kathmandu",
+//       "profession": "Software Engineer",
+//       "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//     },
+//     {
+//       "username": "Alohin",
+//       "lastname": "Oli",
+//       "age": 22,
+//       "city": "Pokhara",
+//       "profession": "Data Analyst",
+//       "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//     },
+//     {
+//       "username": "Bipana",
+//       "lastname": "Chaudhari",
+//       "age": 25,
+//       "city": "Butwal",
+//       "profession": "Graphic Designer",
+//       "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//     },
+//     {
+//       "username": "Rajan",
+//       "lastname": "Khadka",
+//       "age": 26,
+//       "city": "Biratnagar",
+//       "profession": "Cybersecurity Specialist",
+//       "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//     }
+//   ]
+  
+
+//   return (
+//     <>
+//       <div className='p-5 flex items-center justify-center'>
+//         {users.map(function(elem, index){
+//           return <CardFour key={index}username={elem.username} lastname={elem.lastname} age={elem.age} city={elem.city} Profession = {elem.profession} photo={elem.profile_photo} />
+//         })}
+//       </div>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+
+
+
+//Question is: How to give props to child?
+//We can only pass data from parent to children.
+//app.jsx bata CardFive maa name pass garera receive gareko ra CardFive bata CardFive1 maa feri tei data pass gareko. app.jsx bata name pass gareko CardFive maa user variable maa receive gareko ra tei user feri CardFive1 bata receive gareko.
+// import React from 'react'
+// import CardFive from './components/CardFive'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <CardFive name="Cardfiverajan"/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+
+//How to show data in frontend coming from api?
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const App = () => {
 
-  const users = [
-    {
-      "username": "Rajan",
-      "lastname": "Bhandari",
-      "age": 23,
-      "city": "Dang",
-      "profession": "Web Developer",
-      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "username": "Sachin",
-      "lastname": "Chaudhari",
-      "age": 24,
-      "city": "Kathmandu",
-      "profession": "Software Engineer",
-      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "username": "Alohin",
-      "lastname": "Oli",
-      "age": 22,
-      "city": "Pokhara",
-      "profession": "Data Analyst",
-      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "username": "Bipana",
-      "lastname": "Chaudhari",
-      "age": 25,
-      "city": "Butwal",
-      "profession": "Graphic Designer",
-      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "username": "Rajan",
-      "lastname": "Khadka",
-      "age": 26,
-      "city": "Biratnagar",
-      "profession": "Cybersecurity Specialist",
-      "profile_photo": "https://images.unsplash.com/photo-1709884735626-63e92727d8b6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-    }
-  ]
-  
-
+const [data, setdata] = useState([])
+  const getData = async()=>{
+    const response = await axios.get('https://picsum.photos/v2/list')
+    setdata(response.data);
+    console.log(response.data);
+    
+  }
   return (
-    <>
-      <div className='p-5 flex items-center justify-center'>
-        {users.map(function(elem, index){
-          return <CardFour key={index}username={elem.username} lastname={elem.lastname} age={elem.age} city={elem.city} Profession = {elem.profession} photo={elem.profile_photo} />
-        })}
+    <div className='p-10'>
+      <button onClick={getData} className='bg-teal-600 text-white font-semibold text-2xl px-6 py-3 rounded-xl active:scale-90 '>Get Data</button>
+      <div className='p-5 mt-5  bg-slate-500 w-full'>{data.map(function(elem, index){return <div key={index} className='bg-gray-400 text-black items-center flex justify-between w-full px-7 py-6 rounded mb-10'>
+            <img className= "h-40"src={elem.download_url} alt="" />
+            <h1>{elem.author}</h1>
       </div>
-    </>
+      })}</div>
+    </div>
   )
 }
 
