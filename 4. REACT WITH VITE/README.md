@@ -135,4 +135,148 @@ export default {
 - we use Linkto tag instead of a href:
 <!-- <Link to = "/home" className="text-xl cursor-pointer">Home</Link> -->
 
+# Context Api::
+- Context Api is a state management tool which is used to make a data centralized so that everyone can use it. Like: There are 3 people rajan, ram and ramesh. Rajan has netflix password. Rajan can give ram a password and ram can give ramesh a password. but ramesh cannot give password to ram and ram cannot give a password to rajan. Means parent can give a password to child(hierarchy). So, context api store password in a centralized place where anyone can access that password. Here, Rajan, Ram, and Ramesh represent components in a React hierarchy, and the Netflix password is the shared state.
+
+- Context API creates a "centralized" data source, allowing data (like the password) to be shared without the need for props drilling (passing data manually through multiple component levels).
+
+first make a context folder inside src and inside that context folder, make a file UserContext.jsx. rafce inside usercontext and return ko thakkai mathi const userName = "Rajan" lekhni. aba yo username purai app maa access garna ko lagi main.jsx file maa <App/> vanni lai usercontext maa wrap garnu parxa jastai:
+  <!-- <UserContext>
+          <App />
+        </UserContext> --> Like this.
+
+- yesari hamile banako file UserContext.jsx ley App lai wrap garxa ra yo gardaa main.jsx bhitra usercontext import pani hunxa like:
+<!-- import UserContext from './context/UserContext.jsx' -->
+
+
+> Important:  aba yaha jaba usercontext ley app lai wrap garxam, usercontext parent vayo ra app child vayo. Browser maa aba app.jsx dekhidaina tesko thau maa usercontext.jsx dekhinxa.
+
+- Aba tyo app.jsx dekhauna ko lagi props pass garda ni vayo yaa destructuring gardaa ni vayo like:
+
+- Destructuring:::::::::::
+<!-- import React from 'react'
+
+const UserContext = ({children}) => {
+
+    const userName = "Rajan_UserContext"
+  return (
+    <div>
+        {children}
+    </div>
+  )
+}
+
+export default UserContext -->
+
+- Passing props:::::::::::::::::::
+<!-- import React from 'react'
+
+const UserContext = (props) => {
+
+    const userName = "Rajan_UserContext"
+  return (
+    <div>
+        {props.children}
+    </div>
+  )
+}
+
+export default UserContext -->
+
+
+-if maile aba app.jsx maa header.jsx use gare ra Aba tyo username= "Rajan" vanni data use vako harek component maa pathauna ko lagi context create garnu paryo:(inside usercontext.jsx)
+
+<!-- import React, { createContext } from 'react'
+
+
+
+export const DataContext = CreateContext()
+
+const UserContext = (props) => {
+
+    const userName = "Rajan_UserContext"
+  return (
+    <div>
+        {props.children}
+    </div>
+  )
+}
+
+export default UserContext -->
+
+- aba maile koi data tyo DataContext ko through bata pass garna ko lagi::
+
+<!-- import React, { createContext } from 'react'
+
+
+
+export const DataContext = createContext()
+
+const UserContext = (props) => {
+
+    const userName = "Rajan_UserContext"
+  return (
+    <div>
+        <DataContext.Provider value={userName}>
+        {props.children}
+        </DataContext.Provider>
+    </div>
+  )
+}
+
+export default UserContext-->
+
+- Aba  yeti garepaxi data pass vayo through context API. Now, aba maile app.jsx maa tyo pass vako data receive garna paryo vani:
+
+
+<!-- import React, { useContext } from 'react'
+import Header from './components/Header'
+import { DataContext } from './context/UserContext'
+
+const App = () => {
+  const data = useContext(DataContext)
+  console.log(data);
+  
+  return (
+    <div>
+      <Header/>
+      <h1>This is app.jsx  {data}</h1>
+    </div>
+  )
+}
+
+export default App -->
+
+- aba yaha samma app.jsx maa ta tyo data use garim . malai header.jsx component maa pani use garna paryo vani::
+
+<!-- import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../context/UserContext";
+
+const Header = () => {
+  const data = useContext(DataContext)
+  return (
+    <>
+      <nav className=" bg-emerald-800 flex py-5 px-10 items-center justify-between ">
+        <h2 className="text-2xl cursor-pointer">LOGO{data}</h2>
+        <div className="flex gap-9 items-center">
+          <Link to = "/home" className="text-xl cursor-pointer">Home</Link>
+          <Link to = "/product" className="text-xl cursor-pointer">Products</Link>
+          <Link to = "/contact" className="text-xl cursor-pointer">Contact</Link>
+          <Link to = "/about" className="text-xl cursor-pointer">About</Link>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Header; -->
+
+- jaha use garepani process same ho. tei ek line lekhni:
+  <!-- const data = useContext(DataContext) -->
+- ani usecontext ra datacontext lai import vako xaina vani import garni. ani data name pass garera use garni. jastai maile mathi LOGO paxadi {data} garera pass garera use gareko xu:like:
+  <!-- <h2 className="text-2xl cursor-pointer">LOGO{data}</h2> -->
+
+  
+
 

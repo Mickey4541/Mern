@@ -328,31 +328,56 @@
 
 // ###### REACT ROUTER DOM ######
 
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Home from './pages/Home'
-import Product from './pages/Product'
+// import React from 'react'
+// import { Route, Routes } from 'react-router-dom'
+// import About from './pages/About'
+// import Contact from './pages/Contact'
+// import Home from './pages/Home'
+// import Product from './pages/Product'
+// import Header from './components/Header'
+
+
+
+// const App = () => {
+//   return (
+   
+//     <div>
+//       <Header/>
+//       <Routes>
+//         <Route path='/home' element={<Home />}/>
+//         <Route path='/about' element={<About />}/>
+//         <Route path='/contact' element={<Contact />}/>
+//         <Route path='/product' element={<Product />}/>
+//         <Route path='/home' element={<Home />}/>
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+
+//  ####### CONTEXT API ##########
+//  Detail in readme ###################
+
+import React, { useContext } from 'react'
 import Header from './components/Header'
-
-
+import { DataContext } from './context/UserContext'
 
 const App = () => {
+  const data = useContext(DataContext)
+  console.log(data);
+  
   return (
-   
     <div>
       <Header/>
-      <Routes>
-        <Route path='/home' element={<Home />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/product' element={<Product />}/>
-        <Route path='/home' element={<Home />}/>
-      </Routes>
+      <h1>This is app.jsx   {data}</h1>
     </div>
   )
 }
 
 export default App
-
