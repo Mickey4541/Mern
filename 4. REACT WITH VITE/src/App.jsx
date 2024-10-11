@@ -289,29 +289,70 @@
 
 
 
-//How to show data in frontend coming from api?
-import React, { useState } from 'react'
-import axios from 'axios'
+// //How to show data in frontend coming from api?
+// import React, { useEffect, useState } from 'react'
+// import axios from 'axios'
+
+// const App = () => {
+
+// const [data, setdata] = useState([])
+//   const getData = async()=>{
+//     const response = await axios.get('https://picsum.photos/v2/list')
+//     setdata(response.data);
+//     //console.log(response.data);
+
+//   }
+
+//   //useeffect automatically fetch data from api without clicking a button.
+//   // useEffect(() => {
+//   //   getData()
+//   // }, [])
+  
+//   return (
+//     <div className='p-10'>
+//       <button onClick={getData} className='bg-teal-600 text-white font-semibold text-2xl px-6 py-3 rounded-xl active:scale-90 '>Get Data</button>
+//       <div className='p-5 mt-5  bg-slate-500 w-full'>{data.map(function(elem, index){return <div key={index} className='bg-gray-400 text-black items-center flex justify-between w-full px-7 py-6 rounded mb-10'>
+//             <img className= "h-40"src={elem.download_url} alt="" />
+//             <h1>{elem.author}</h1>
+//       </div>
+//       })}</div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+// ###### REACT ROUTER DOM ######
+
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Home from './pages/Home'
+import Product from './pages/Product'
+import Header from './components/Header'
+
+
 
 const App = () => {
-
-const [data, setdata] = useState([])
-  const getData = async()=>{
-    const response = await axios.get('https://picsum.photos/v2/list')
-    setdata(response.data);
-    console.log(response.data);
-    
-  }
   return (
-    <div className='p-10'>
-      <button onClick={getData} className='bg-teal-600 text-white font-semibold text-2xl px-6 py-3 rounded-xl active:scale-90 '>Get Data</button>
-      <div className='p-5 mt-5  bg-slate-500 w-full'>{data.map(function(elem, index){return <div key={index} className='bg-gray-400 text-black items-center flex justify-between w-full px-7 py-6 rounded mb-10'>
-            <img className= "h-40"src={elem.download_url} alt="" />
-            <h1>{elem.author}</h1>
-      </div>
-      })}</div>
+   
+    <div>
+      <Header/>
+      <Routes>
+        <Route path='/home' element={<Home />}/>
+        <Route path='/about' element={<About />}/>
+        <Route path='/contact' element={<Contact />}/>
+        <Route path='/product' element={<Product />}/>
+        <Route path='/home' element={<Home />}/>
+      </Routes>
     </div>
   )
 }
 
 export default App
+

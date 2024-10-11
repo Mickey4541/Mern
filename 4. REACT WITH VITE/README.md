@@ -119,4 +119,20 @@ export default {
 - APIS are like waiter.
 - Lorem Picsum is fake api. we can use it.
 - npm i axios
-- 
+
+
+# REACT ROUTER DOM:::::
+- inside src folder, make pages folder.
+- inside pages, Make pages like Home.jsx etc.
+- inside terminal, npm i react-router-dom
+- Inside main.jsx, import browser router and wrap app inside it::
+> import { BrowserRouter } from "react-router-dom"
+
+<!-- <BrowserRouter>
+      <App />
+    </BrowserRouter> -->
+
+- we use Linkto tag instead of a href:
+<!-- <Link to = "/home" className="text-xl cursor-pointer">Home</Link> -->
+
+
