@@ -3,7 +3,9 @@ import Header from '../Others/Header'
 import TaskListNumbers from '../Others/TaskListNumbers'
 import TaskList from '../TaskList/TaskList'
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = (props) => {
+  console.log(props);
+  
   return (
     <div className='p-10 bg-[#icicic] h-screen'>
         <Header/>
@@ -14,3 +16,5 @@ const EmployeeDashboard = () => {
 }
 
 export default EmployeeDashboard
+
+2.12.17
