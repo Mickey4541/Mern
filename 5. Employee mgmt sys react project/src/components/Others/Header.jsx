@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { setLocalStorage } from '../../utils/localStorage'
 
-const Header = () => {
+const Header = (props) => {
   // console.log(data);
   // const [username, setusername] = useState("")
 
@@ -15,6 +15,8 @@ const Header = () => {
   const logOutUser = () => {
     localStorage.setItem('loggedInUser','')
     window.location.reload()
+    // console.log(props.changeUser);
+    props.changeUser('') //change user empty vayepaxi app.jsx bhitra !user wala condition chalxa ani form aauxa ui maa.(means !user vayo vani login render hunxa)
   }
 
 

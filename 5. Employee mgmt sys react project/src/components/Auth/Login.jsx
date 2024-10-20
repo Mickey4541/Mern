@@ -11,9 +11,9 @@ const Login = ({handleLogin}) => {
 
     const submitHandler = (e) => {//form submit hudaa yo function call hunxa.
         e.preventDefault()
-        console.log("Form Submitted.");
-        console.log('email is', email);
-        console.log('password is',password);
+        // console.log("Form Submitted.");
+        // console.log('email is', email);
+        // console.log('password is',password);
 
         handleLogin(email,password);//whenever we submit form, we pass the email and password inside handle login function.
         setEmail("")//submit garepaxi input field empty banako.

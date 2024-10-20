@@ -3,7 +3,7 @@ import { AuthContext } from '../../context/AuthProvider'
 
 const AllTask = (e) => {
     const authData = useContext(AuthContext)
-    console.log(authData.employees);
+    //console.log(authData.employees);
     
   return (
     <div className='bg-[#1c1c1c] p-5 rounded mt-5'>
@@ -16,8 +16,8 @@ const AllTask = (e) => {
         </div>
 
         <div className='h-[80%]'>
-        {authData.employees.map((e)=>{
-            return <div className='bg-black mb-2 py-2 px-4 flex justify-between rounded'>
+        {authData.employees.map((e, idx)=>{
+            return <div key={idx} className='bg-black mb-2 py-2 px-4 flex justify-between rounded'>
             <h2  className='w-1/5 bg-black text-center rounded-xl text-lg'>{e.name}</h2>
             <h3  className='w-1/5 bg-blue-600 text-center rounded-xl text-lg'>{e.taskCounts.newTask}</h3>
             <h5  className='w-1/5 bg-yellow-600 text-center rounded-xl text-lg'>{e.taskCounts.active}</h5>
